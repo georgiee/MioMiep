@@ -1,0 +1,1723 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"para",
+				"param2"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"repe",
+				"repeat-x"
+			],
+			[
+				"bac",
+				"background-repeat"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"back",
+				"background-position"
+			],
+			[
+				"li",
+				"line-height"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"pa",
+				"padding-right"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"margi",
+				"margin"
+			],
+			[
+				"new",
+				"newValue"
+			],
+			[
+				"v",
+				"vertical-align"
+			],
+			[
+				"border",
+				"border-bottom"
+			],
+			[
+				"bor",
+				"border-bottom"
+			],
+			[
+				"ma",
+				"margin"
+			],
+			[
+				"begin",
+				"beginning_of_week"
+			],
+			[
+				"we",
+				"week_count"
+			],
+			[
+				"proto",
+				"prototype"
+			],
+			[
+				"st",
+				"style	Tag"
+			],
+			[
+				"render",
+				"renderer"
+			],
+			[
+				"scree",
+				"screenOrientation"
+			],
+			[
+				"messa",
+				"message"
+			],
+			[
+				"global",
+				"global_merge_vars"
+			],
+			[
+				"hello",
+				"helloneu"
+			],
+			[
+				"mandrill_a",
+				"mandrill_api_key"
+			],
+			[
+				"conf",
+				"configuration"
+			],
+			[
+				"divi",
+				"division"
+			],
+			[
+				"acce",
+				"access_token"
+			],
+			[
+				"pag",
+				"paging_url"
+			],
+			[
+				"album",
+				"album"
+			],
+			[
+				"l",
+				"line-height"
+			],
+			[
+				"was",
+				"Waschmaschine"
+			],
+			[
+				"borderc",
+				"border-collapse"
+			],
+			[
+				"par",
+				"params"
+			],
+			[
+				"pro",
+				"product-slider"
+			],
+			[
+				"m",
+				"margin-bottom"
+			],
+			[
+				"remove",
+				"removeAllFiles"
+			],
+			[
+				"fi",
+				"fileurl"
+			],
+			[
+				"sub",
+				"submission"
+			],
+			[
+				"b",
+				"block"
+			],
+			[
+				"tab",
+				"table-cell"
+			],
+			[
+				"func",
+				"function"
+			],
+			[
+				"md",
+				"md5_checksum"
+			],
+			[
+				"pd",
+				"padding-left"
+			],
+			[
+				"enti",
+				"entities"
+			],
+			[
+				"list",
+				"list-style-type"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"inli",
+				"inline-block"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"toggle",
+				"toggleClass"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"curr",
+				"currentView"
+			],
+			[
+				"init",
+				"initDissolver"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"redirec",
+				"redirect_to"
+			],
+			[
+				"displ",
+				"displayText"
+			],
+			[
+				"me",
+				"me_uuid"
+			],
+			[
+				"first",
+				"first_name"
+			],
+			[
+				"curre",
+				"currentGame"
+			],
+			[
+				"frie",
+				"friendsMission"
+			],
+			[
+				"backgr",
+				"background-size"
+			],
+			[
+				"of",
+				"offsetY"
+			],
+			[
+				"sec",
+				"sector"
+			],
+			[
+				"mr",
+				"margin-bottom"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"ena",
+				"enabled"
+			],
+			[
+				"start",
+				"startChallenge"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "test/test_miomiep.rb",
+			"settings":
+			{
+				"buffer_size": 367,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/george/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 795,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Ruby/Ruby.sublime-build",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"ssxm",
+				"Set Syntax: XML"
+			],
+			[
+				"ssxml",
+				"Set Syntax: XML"
+			],
+			[
+				"preview",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"preeview",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"browse",
+				"Preferences: Browse Packages"
+			],
+			[
+				"send",
+				"Maya: Send Selection to Maya"
+			],
+			[
+				"ma",
+				"Maya: Send Selection to Maya"
+			],
+			[
+				"maya",
+				"Maya: Send Selection to Maya"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"ss pyht",
+				"Set Syntax: Python"
+			],
+			[
+				"preiv",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"prev",
+				"GitHub Flavored Markdown: Preview"
+			],
+			[
+				"xx",
+				"Set Syntax: XML"
+			],
+			[
+				"ssjs",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"bro",
+				"Preferences: Browse Packages"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"html",
+				"Snippet: html"
+			],
+			[
+				"ss js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"prevo",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"ss json",
+				"Set Syntax: JSON"
+			],
+			[
+				"preview ",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"ss html",
+				"Set Syntax: HTML"
+			],
+			[
+				"ss ht",
+				"Set Syntax: HTML"
+			],
+			[
+				"lore",
+				"LoremIpsum: (200) stick shake"
+			],
+			[
+				"lorem 2",
+				"LoremIpsum: (200) stick shake"
+			],
+			[
+				"lorem",
+				"LoremIpsum: (5) a bit"
+			],
+			[
+				"ss coff",
+				"Set Syntax: CoffeeScript"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"ss scss",
+				"Set Syntax: SCSS"
+			],
+			[
+				"ss ham",
+				"Set Syntax: Ruby Haml"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"ru",
+				"RubyTest: Verify Syntax"
+			],
+			[
+				"build",
+				"Build: Build"
+			],
+			[
+				"ruby",
+				"RubyTest: Verify Syntax"
+			],
+			[
+				"ss coffe",
+				"Set Syntax: CoffeeScript"
+			],
+			[
+				"prwv",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"previ",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"oreview",
+				"GitHub Flavored Markdown: Preview"
+			],
+			[
+				"sshaml",
+				"Set Syntax: Ruby Haml"
+			],
+			[
+				"ac",
+				"Set Syntax: ActionScript"
+			],
+			[
+				"asc",
+				"Set Syntax: ActionScript"
+			],
+			[
+				"ssas",
+				"Set Syntax: ActionScript"
+			],
+			[
+				"ss pyth",
+				"Set Syntax: Python"
+			],
+			[
+				"ss maya",
+				"Maya: Send Selection to Maya"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"ss rspe",
+				"Set Syntax: RSpec"
+			],
+			[
+				"ss rb",
+				"Set Syntax: Ruby"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"rubt",
+				"RubyTest: Verify Syntax"
+			],
+			[
+				"ss htm",
+				"Set Syntax: HTML"
+			],
+			[
+				"ss haml",
+				"Set Syntax: Ruby Haml"
+			],
+			[
+				"pastr",
+				"Text Pastry: From 1 To X"
+			],
+			[
+				"past",
+				"Text Pastry: From 0 To X"
+			],
+			[
+				"ss rub",
+				"Set Syntax: Ruby"
+			],
+			[
+				"ss mark",
+				"Set Syntax: Markdown"
+			],
+			[
+				"prei",
+				"Markdown Preview: Python Markdown: Preview in Browser"
+			],
+			[
+				"ss eco",
+				"Set Syntax: HTML (ECO)"
+			],
+			[
+				"scss",
+				"Set Syntax: SCSS"
+			],
+			[
+				"sssas",
+				"Set Syntax: Sass"
+			],
+			[
+				"hint",
+				"JSHint"
+			],
+			[
+				"lint",
+				"JSHint: Set Linting Preferences"
+			],
+			[
+				"cof",
+				"Coffee: Compile File"
+			],
+			[
+				"jslin",
+				"JSHint: Set Linting Preferences"
+			],
+			[
+				"coff",
+				"Coffee: Compile File"
+			],
+			[
+				"cof sett",
+				"Set Syntax: CoffeeScript (Literate)"
+			],
+			[
+				"coffe ",
+				"Coffee: Display JavaScript"
+			],
+			[
+				"jshint",
+				"JSHint"
+			],
+			[
+				"coffeelint",
+				"Coffee: Lint"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 294.0,
+		"history":
+		[
+			"coffelint",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/george/job/opensource/midigame/miomiep-gem",
+		"/Users/george/job/opensource/midigame/miomiep-gem/test"
+	],
+	"file_history":
+	[
+		"/Users/george/job/opensource/midigame/miomiep-gem/Gemfile",
+		"/Users/george/job/opensource/midigame/miomiep-gem-/Gemfile",
+		"/Users/george/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/george/job/opensource/midigame/miomiep-gem/lib/miomiep.rb",
+		"/Users/george/Library/Application Support/Sublime Text 3/Packages/RubyTest/RubyTest.sublime-settings",
+		"/Users/george/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/george/job/opensource/midigame/miomiep-gem/test/test_miomiep.rb",
+		"/Users/george/job/opensource/midigame/miomiep-gem/lib/miomiep/version.rb",
+		"/Users/george/job/opensource/midigame/miomiep-gem/miomiep.sublime-project",
+		"/Users/george/Library/Application Support/Sublime Text 3/Packages/User/RubyTest.sublime-settings",
+		"/Users/george/job/opensource/midigame/miomiep-gem/Rakefile",
+		"/Users/george/job/opensource/midigame/miomiep-gem/miomiep.gemspec",
+		"/Users/george/job/opensource/midigame/miomiep-gem/tasks/test.rake",
+		"/Users/george/job/opensource/midigame/miomiep-gem/test/test_helper.rb",
+		"/Users/george/job/opensource/midigame/tests/read.rb",
+		"/Users/george/job/patio/patio-gem/lib/patio.rb",
+		"/Users/george/job/opensource/midigame/lib/miomiep/core/byte_reader.rb",
+		"/Users/george/job/opensource/midigame/lib/miomiep/midi_file.rb",
+		"/Users/george/job/opensource/midigame/tests/#<OpenStruct id=\"MThd\", length=6, data=#<ByteReader",
+		"/Users/george/job/opensource/midigame/tests/event_type",
+		"/Users/george/job/opensource/midigame/tests/jasmid.js",
+		"/Users/george/Downloads/midilib-master/lib/midilib/sequence.rb",
+		"/Users/george/Downloads/midilib-master/lib/midilib/io/midifile.rb",
+		"/Users/george/Downloads/midilib-master/examples/transpose.rb",
+		"/Users/george/Downloads/midilib-master/TODO.rdoc",
+		"/Users/george/Downloads/midilib-master/examples/seq2text.rb",
+		"/Users/george/job/2014/bohnenleiter/game/source/javascripts/bohnenleiter-game-src/states/game.js",
+		"/Users/george/job/2014/bohnenleiter/game/source/javascripts/midi/MIDI.js",
+		"/Users/george/job/2014/bohnenleiter/game/source/javascripts/application.js",
+		"/Users/george/job/2014/bohnenleiter/game/source/javascripts/bohnenleiter-game-src/application.js",
+		"/Users/george/job/2014/bohnenleiter/game/source/gameassets/soundfonts/acoustic_grand_piano-mp3.js",
+		"/Users/george/job/2014/bohnenleiter/meta/prototype/web/soundfont/acoustic_grand_piano-mp3.js",
+		"/Users/george/job/2014/bohnenleiter/meta/prototype/web/js/app.js",
+		"/Users/george/job/2014/bohnenleiter/meta/prototype/web/js/midi/MIDI.js",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/controllers/admin/roulette_games_controller.rb",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/config/secrets.yml",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/test/integration/newsletter_test.rb",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/config/environments/test.rb",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/javascripts/adventsroulette/views/modals/terms_and_privacy_modal.js.coffee",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/stylesheets/adventsroulette/mobile/_base_layout.scss",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/javascripts/adventsroulette/services/facebook_service.js.coffee",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/stylesheets/adventsroulette/mobile/pages/_prizes.scss",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/stylesheets/adventsroulette/mobile/pages/_game.scss",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/stylesheets/adventsroulette/desktop/pages/_game.scss",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/javascripts/adventsroulette/views/game.js.coffee",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/Gemfile",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/stylesheets/adventsroulette/desktop/pages/_prizes.scss",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/controllers/admin/prizes_controller.rb",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/Procfile.staging",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/models/prize.rb",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/views/adventsroulette/prizes.html.haml",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/views/partials/_piwik.html.haml",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/views/adventsroulette/fb_post.html.haml",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/javascripts/adventsroulette/views/footer.js.coffee",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/models/roulette_game.rb",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/stylesheets/adventsroulette/shared/_form.scss",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/stylesheets/adventsroulette/mobile/pages/_registration.scss",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/stylesheets/adventsroulette/desktop/pages/_registration.scss",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/spec/controllers/registrations_controller_spec.rb",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/spec/models/registration_spec.rb",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/javascripts/adventsroulette/views/registration_success.js.coffee",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/controllers/registrations_controller.rb",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/views/layouts/reduced.html.haml",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/javascripts/adventsroulette/views/registrations_new.js.coffee",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/views/registrations/new.haml",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/views/registrations/_form.haml",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/views_mobile/layouts/_footer.haml",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/stylesheets/adventsroulette/mobile/_footer.scss",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/javascripts/adventsroulette/router_mobile.js.coffee",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/stylesheets/adventsroulette/mobile/_sprites.scss",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/stylesheets/adventsroulette/desktop/_modal.scss",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/stylesheets/adventsroulette/modules/_mixins.scss",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/config/locales/en.yml",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/views/layouts/_jsconfig.json.jbuilder",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/config/routes.rb",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/javascripts/adventsroulette/views/game_introduction.js.coffee",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/views/layouts/application.html.haml",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/javascripts/adventsroulette/game/simple-roulette.js.coffee",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/config/initializers/newsletter.rb",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/public/ie.html",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/javascripts/adventsroulette/router.js.coffee",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/config/adventsroulette.yml",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/views/adventsroulette/redirect.html.haml",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/lib/newsletter/response_decorator.rb",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/README.md",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/helpers/application_helper.rb",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/views/layouts/_footer.haml",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/controllers/adventsroulette_controller.rb",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/views/partials/_terms_and_privacy.haml",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/stylesheets/adventsroulette/shared/_service.scss",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/views/service_pages/terms.html.haml",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/views/service_pages/privacy.html.haml",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/views/service_pages/piwik.html.haml",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/views/admin/roulette_games/_winner_selection.haml",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/config/initializers/adventsroulette.rb",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/stylesheets/adventsroulette/desktop/_prize_frame.scss",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/views/admin/roulette_games/show.html.haml",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/views/layouts/_counter.haml",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/views_mobile/partials/_counter.haml",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/stylesheets/adventsroulette/desktop/_counter.scss",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/javascripts/adventsroulette/views/content_dimmer.coffee",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/test/integration/clever_reach_test.rb",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/stylesheets/adventsroulette/desktop/_footer.scss",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/spec/factories/roulette_game.rb",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/spec/models/roulette_game_spec.rb",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/lib/newsletter.rb",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/config/newrelic.yml",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/javascripts/adventsroulette/views/modals/terms_modal.js.coffee",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/views_mobile/service_pages/terms.html.haml",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/controllers/admin/winners_controller.rb",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/views_mobile/adventsroulette/winner.html.haml",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/models/winner.rb",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/javascripts/adventsroulette/views/winner.js.coffee",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/views/adventsroulette/welcome.html.haml",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/db/migrate/20131112185250_add_nr_to_registration_table.rb",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/db/migrate/20131113142022_add_roulette_key_to_bets.rb",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/javascripts/adventsroulette/game/entities/ball.js.coffee",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/javascripts/lib/gsap/TweenMax.js",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/db/migrate/20131123144813_update_winners_table_with_reserve_flag.rb",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/javascripts/adventsroulette/game/entities/roulette_wheel.js.coffee",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/config/initializers/backtrace_silencers.rb",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/stylesheets/adventsroulette/desktop/_buttons.scss",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/views_mobile/adventsroulette/game.html.haml",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/lib/newsletter/subscriber.rb",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/models/registration.rb",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/lib/newsletter/configuration.rb",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/models/invitation.rb",
+		"/Users/george/job/2014/adventsroulette-leibnitz-2014/rails/app/assets/javascripts/adventsroulette/views/abstract/stage.js.coffee"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"",
+			"*.scss",
+			"",
+			"*.scss",
+			"",
+			"*.coffee",
+			"*.rb",
+			"",
+			"*.scss",
+			"",
+			"*.coffee",
+			"",
+			"*.scss",
+			"",
+			"*.scss",
+			"",
+			"*.rb",
+			"",
+			"*.coffee",
+			"",
+			"*.coffee",
+			"*.scss",
+			"*.coffee",
+			"*.scss",
+			"",
+			"*.coffee",
+			"*.scss",
+			"*.coffee",
+			"*.scss",
+			"",
+			"*.coffee",
+			"",
+			"*.scss",
+			"",
+			"*.coffee",
+			"*.haml",
+			"*.scss",
+			"*.haml",
+			"*.scss",
+			"",
+			"*.coffee",
+			"",
+			"*.scss",
+			"*.coffee",
+			"",
+			"*.coffee",
+			"",
+			"*.eco",
+			"*.ecp",
+			"*.jst",
+			"*.coffee",
+			"",
+			"*.coffee",
+			"*.scss",
+			"*.haml",
+			"*.scss",
+			"scss",
+			"",
+			"*.scss",
+			"",
+			"*.scss",
+			"*.coffee",
+			"*.scss",
+			"*.coffee",
+			"*.scss",
+			"*.coffee",
+			"*.haml",
+			"",
+			"*.rb",
+			"",
+			"*.coffee",
+			"*.scss",
+			"*.rb",
+			"",
+			"*.coffee",
+			"",
+			"*.rb",
+			"*.scss",
+			"*.coffee",
+			"",
+			"*.coffee",
+			"*.scss",
+			"",
+			"*.scss",
+			"",
+			"*.coffee",
+			"",
+			"*.coffee",
+			"*.scss",
+			"",
+			"*.rb",
+			"*.coffee",
+			"*.scss",
+			"*.haml",
+			"*.coffee",
+			"*.scss",
+			"*.coffee",
+			"*.rb",
+			"*.coffee",
+			"coffee",
+			"",
+			"*.coffee",
+			"",
+			"*.rb",
+			"*.coffee",
+			"*.scss",
+			"*.coffee",
+			"",
+			"*.coffee",
+			"*.scss",
+			"*.rb",
+			"",
+			"*.coffee",
+			"*.rb",
+			"*.scss",
+			"*.rb",
+			"*.scss",
+			"*.rb",
+			"*.scss",
+			"",
+			"*.rb",
+			"*.coffee",
+			"*.scss",
+			"",
+			"*.coffee",
+			"",
+			"*.coffee",
+			"*.rb"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"ByteReader",
+			"byte_reader",
+			"midi_file",
+			"byte_reader",
+			"puts",
+			"hello",
+			"hola",
+			"add_development_dependency",
+			"::V",
+			"version",
+			"patio",
+			"MioMiep",
+			"midi_file",
+			"MioMiep",
+			"io",
+			"require",
+			"bytereader",
+			"META_EVENT",
+			"class",
+			"count",
+			"4",
+			"read_int8",
+			"each_line",
+			"RECORD_SEPARATOR",
+			"unpack",
+			"202",
+			"read_event",
+			"buffer",
+			" then",
+			"p2",
+			" \n",
+			"p1",
+			"param1",
+			"end",
+			"0xEF",
+			"16",
+			"ByetReader",
+			"status",
+			"event_type",
+			"eventTypeByte",
+			"event_type_byte",
+			"result",
+			"value",
+			"result",
+			"readInt8",
+			"read_int8",
+			"stream",
+			"strea",
+			"z-index",
+			"counter",
+			"coutner",
+			"sequencer_specific",
+			"sequencer_specific\nsequencer_specific",
+			"sequencer_specific",
+			"read_var_len",
+			"META_EVENT",
+			"meta_event",
+			"msg_init",
+			"msg_read",
+			"msg_add",
+			"msg_buf",
+			"def msg",
+			"msg",
+			"meta_event",
+			"META_EVENT",
+			"meta_event",
+			"META_TIME_SIG",
+			"0x58",
+			"META_EVENT",
+			"read_track",
+			"tracks",
+			"track",
+			"read_var_len",
+			"raw_var_num_data",
+			"read_var_len",
+			"var",
+			"read_track",
+			"track",
+			"tracks",
+			"get_bytes",
+			"getc",
+			"read_mt_header_string",
+			"MThd_BYTE_ARRAY",
+			"getc",
+			"get_bytes",
+			"read_mt_header_string",
+			"MThd_BYTE_ARRAY",
+			"read_mt_header_string",
+			"MThd_BYTE_ARRAY",
+			"read_mt_header_string",
+			"get_bytes",
+			"read_mt_header_string",
+			"read_header",
+			"read",
+			"reader_class",
+			"def read",
+			"read",
+			".read",
+			"read_from",
+			"file",
+			"NUM_DATA_BYTES",
+			"chan_message",
+			"note_on",
+			"note",
+			"NoteOn",
+			"NoteEvent",
+			"getc",
+			"read32",
+			"read_header",
+			"read_track",
+			"readbyte",
+			"getc",
+			"read_header",
+			"read_track",
+			"start_track",
+			"start",
+			"start_track",
+			"max_time",
+			"getc",
+			"read_var_len",
+			"META_EVENT",
+			"meta_event",
+			"META_SEQ_NUM",
+			"read_header",
+			"reader_class",
+			"play",
+			"start",
+			"MIDIVisualizer"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"adventsroulette-image",
+			"get-adventsroulette",
+			"Pinball.Models.User",
+			"Pinball.Store.logger"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "test/test_miomiep.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 367,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								114,
+								114
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/george/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 795,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								138,
+								138
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 255.0
+	},
+	"output.find_results":
+	{
+		"height": 100.0
+	},
+	"project": "miomiep.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"midifi",
+				"lib/midilib/io/midifile.rb"
+			],
+			[
+				"seqreader",
+				"lib/midilib/io/seqreader.rb"
+			],
+			[
+				"midif",
+				"lib/midilib/io/midifile.rb"
+			],
+			[
+				"track",
+				"lib/midilib/track.rb"
+			],
+			[
+				"midifile",
+				"lib/midilib/io/midifile.rb"
+			],
+			[
+				"seque",
+				"lib/midilib/sequence.rb"
+			],
+			[
+				"appjs",
+				"javascripts/bohnenleiter-game-src/application.js"
+			],
+			[
+				"apjs",
+				"js/app.js"
+			],
+			[
+				"testnews",
+				"test/integration/newsletter_test.rb"
+			],
+			[
+				"secr",
+				"config/secrets.yml"
+			],
+			[
+				"secre",
+				"config/secrets.yml"
+			],
+			[
+				"gamescss",
+				"app/assets/stylesheets/adventsroulette/mobile/pages/_game.scss"
+			],
+			[
+				"prscs",
+				"app/assets/stylesheets/adventsroulette/mobile/pages/_prizes.scss"
+			],
+			[
+				"fbser",
+				"app/assets/javascripts/adventsroulette/services/facebook_service.js.coffee"
+			],
+			[
+				"regscss",
+				"app/assets/stylesheets/adventsroulette/mobile/pages/_registration.scss"
+			],
+			[
+				"formscss",
+				"app/assets/stylesheets/adventsroulette/shared/_form.scss"
+			],
+			[
+				"fbserci",
+				"app/assets/javascripts/adventsroulette/services/facebook_service.js.coffee"
+			],
+			[
+				"fbpost",
+				"app/views/adventsroulette/fb_post.html.haml"
+			],
+			[
+				"en",
+				"config/locales/en.yml"
+			],
+			[
+				"rogame",
+				"app/models/roulette_game.rb"
+			],
+			[
+				"jsconf",
+				"app/views/layouts/_jsconfig.json.jbuilder"
+			],
+			[
+				"rout",
+				"config/routes.rb"
+			],
+			[
+				"fbservi",
+				"app/assets/javascripts/adventsroulette/services/facebook_service.js.coffee"
+			],
+			[
+				"fbserv",
+				"app/assets/javascripts/adventsroulette/services/facebook_service.js.coffee"
+			],
+			[
+				"regisucc",
+				"app/assets/javascripts/adventsroulette/views/registration_success.js.coffee"
+			],
+			[
+				"gamecoff",
+				"app/assets/javascripts/adventsroulette/views/game.js.coffee"
+			],
+			[
+				"introdc",
+				"app/assets/javascripts/adventsroulette/views/game_introduction.js.coffee"
+			],
+			[
+				"rocoff",
+				"app/assets/javascripts/adventsroulette/game/simple-roulette.js.coffee"
+			],
+			[
+				"appham",
+				"app/views/layouts/application.html.haml"
+			],
+			[
+				"red",
+				"app/views/layouts/reduced.html.haml"
+			],
+			[
+				"apham",
+				"app/views/layouts/application.html.haml"
+			],
+			[
+				"footer",
+				"app/views/layouts/_footer.haml"
+			],
+			[
+				"termspri",
+				"app/views/partials/_terms_and_privacy.haml"
+			],
+			[
+				"adcon",
+				"app/controllers/adventsroulette_controller.rb"
+			],
+			[
+				"advco",
+				"app/controllers/adventsroulette_controller.rb"
+			],
+			[
+				"prirb",
+				"app/models/prize.rb"
+			],
+			[
+				"rgame",
+				"app/models/roulette_game.rb"
+			],
+			[
+				"rou",
+				"app/models/roulette_game.rb"
+			],
+			[
+				"aphelp",
+				"app/helpers/application_helper.rb"
+			],
+			[
+				"counter",
+				"app/views/layouts/_counter.haml"
+			],
+			[
+				"winner_selection",
+				"app/views/admin/roulette_games/_winner_selection.haml"
+			],
+			[
+				"roshow",
+				"app/views/admin/roulette_games/show.html.haml"
+			],
+			[
+				"innew",
+				"test/integration/newsletter_test.rb"
+			],
+			[
+				"intnews",
+				"config/initializers/newsletter.rb"
+			],
+			[
+				"innews",
+				"config/initializers/newsletter.rb"
+			],
+			[
+				"terms",
+				"app/views/partials/_terms_and_privacy.haml"
+			],
+			[
+				"fservi",
+				"app/assets/javascripts/adventsroulette/services/facebook_service.js.coffee"
+			],
+			[
+				"winner",
+				"app/controllers/admin/winners_controller.rb"
+			],
+			[
+				"tweenm",
+				"app/assets/javascripts/lib/gsap/TweenMax.js"
+			],
+			[
+				"roulettewheel",
+				"app/assets/javascripts/adventsroulette/game/entities/roulette_wheel.js.coffee"
+			],
+			[
+				"ballcof",
+				"app/assets/javascripts/adventsroulette/game/entities/ball.js.coffee"
+			],
+			[
+				"roulettecoff",
+				"app/assets/javascripts/adventsroulette/game/entities/roulette_wheel.js.coffee"
+			],
+			[
+				"regcon",
+				"app/controllers/registrations_controller.rb"
+			],
+			[
+				"new",
+				"config/initializers/newsletter.rb"
+			],
+			[
+				"news",
+				"lib/newsletter.rb"
+			],
+			[
+				"newsubs",
+				"lib/newsletter/subscriber.rb"
+			],
+			[
+				"recontr",
+				"app/controllers/registrations_controller.rb"
+			],
+			[
+				"newsl",
+				"lib/newsletter.rb"
+			],
+			[
+				"newsletter",
+				"test/integration/newsletter_test.rb"
+			],
+			[
+				"deb",
+				"app/views/layouts/debug.haml"
+			],
+			[
+				"stagescs",
+				"app/assets/stylesheets/adventsroulette/desktop/_stages.scss"
+			],
+			[
+				"stage",
+				"app/assets/javascripts/adventsroulette/views/abstract/stage.js.coffee"
+			],
+			[
+				"welcocoff",
+				"app/assets/javascripts/adventsroulette/views/welcome.js.coffee"
+			],
+			[
+				"polyfill",
+				"app/assets/javascripts/lib/ie-checked-polyfill.js"
+			],
+			[
+				"recoff",
+				"app/assets/javascripts/adventsroulette/views/registrations_new.js.coffee"
+			],
+			[
+				"formsc",
+				"app/assets/stylesheets/adventsroulette/shared/_form.scss"
+			],
+			[
+				"form",
+				"app/views/registrations/_form.haml"
+			],
+			[
+				"mobregi",
+				"app/assets/stylesheets/adventsroulette/mobile/pages/_registration.scss"
+			],
+			[
+				"formha",
+				"app/views/registrations/_form.haml"
+			],
+			[
+				"regiscss",
+				"app/assets/stylesheets/adventsroulette/desktop/pages/_registration.scss"
+			],
+			[
+				"regsucc",
+				"app/assets/javascripts/adventsroulette/views/registration_success.js.coffee"
+			],
+			[
+				"rfbserv",
+				"app/assets/javascripts/adventsroulette/services/facebook_service.js.coffee"
+			],
+			[
+				"jscon",
+				"app/views/layouts/_jsconfig.json.jbuilder"
+			],
+			[
+				"aphel",
+				"app/helpers/application_helper.rb"
+			],
+			[
+				"adve",
+				"app/controllers/adventsroulette_controller.rb"
+			],
+			[
+				"appha",
+				"app/views/layouts/application.html.haml"
+			],
+			[
+				"mixi",
+				"app/assets/stylesheets/adventsroulette/modules/_mixins.scss"
+			],
+			[
+				"modals",
+				"app/assets/stylesheets/adventsroulette/desktop/_modal.scss"
+			],
+			[
+				"service",
+				"app/assets/stylesheets/adventsroulette/shared/_service.scss"
+			],
+			[
+				"prizescoff",
+				"app/assets/javascripts/adventsroulette/views/prizes.js.coffee"
+			],
+			[
+				"contentdimmer",
+				"app/assets/javascripts/adventsroulette/views/content_dimmer.coffee"
+			],
+			[
+				"router",
+				"app/assets/javascripts/adventsroulette/router.js.coffee"
+			],
+			[
+				"apha",
+				"app/views/layouts/application.html.haml"
+			],
+			[
+				"ad",
+				"config/adventsroulette.yml"
+			],
+			[
+				"howto",
+				"app/assets/javascripts/adventsroulette/views/howto.js.coffee"
+			],
+			[
+				"welcco",
+				"app/assets/javascripts/adventsroulette/views/welcome.js.coffee"
+			],
+			[
+				"stages",
+				"app/assets/javascripts/adventsroulette/views/abstract/stage.js.coffee"
+			],
+			[
+				"we",
+				"app/views/adventsroulette/welcome.html.haml"
+			],
+			[
+				"butt",
+				"app/assets/stylesheets/adventsroulette/desktop/_buttons.scss"
+			],
+			[
+				"adcontr",
+				"app/controllers/adventsroulette_controller.rb"
+			],
+			[
+				"route",
+				"config/routes.rb"
+			],
+			[
+				"ppiw",
+				"app/views/partials/_piwik.html.haml"
+			],
+			[
+				"piwi",
+				"app/views_mobile/service_pages/piwik.html.haml"
+			],
+			[
+				"termham",
+				"app/views/partials/_terms_and_privacy.haml"
+			],
+			[
+				"servi",
+				"app/assets/stylesheets/adventsroulette/shared/_service.scss"
+			],
+			[
+				"mmana",
+				"app/assets/javascripts/adventsroulette/views/modals/modal_manager.js.coffee"
+			],
+			[
+				"foot",
+				"app/assets/javascripts/adventsroulette/views/footer.js.coffee"
+			],
+			[
+				"termsha",
+				"app/views/partials/_terms_and_privacy.haml"
+			],
+			[
+				"modalabstract",
+				"app/assets/javascripts/adventsroulette/views/modals/modal_abstract.js.coffee"
+			],
+			[
+				"tercoff",
+				"app/assets/javascripts/adventsroulette/views/modals/terms_and_privacy_modal.js.coffee"
+			],
+			[
+				"terpr",
+				"app/views/partials/_terms_and_privacy.haml"
+			],
+			[
+				"read",
+				"README.md"
+			],
+			[
+				"sprit",
+				"app/assets/stylesheets/adventsroulette/mobile/_sprites.scss"
+			],
+			[
+				"regicoff",
+				"app/assets/javascripts/adventsroulette/views/registrations_new.js.coffee"
+			],
+			[
+				"gemf",
+				"Gemfile"
+			],
+			[
+				"advy",
+				"config/adventsroulette.yml"
+			],
+			[
+				"apym",
+				"config/application.yml"
+			],
+			[
+				"roug",
+				"app/models/roulette_game.rb"
+			],
+			[
+				"apcon",
+				"app/controllers/application_controller.rb"
+			],
+			[
+				"newrelic.yml",
+				"config/newrelic.yml"
+			],
+			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"sprite",
+				"app/assets/stylesheets/extraklasse/mobile/_sprites.scss"
+			],
+			[
+				"mobspri",
+				"app/assets/stylesheets/adventsroulette/mobile/_sprites.scss"
+			],
+			[
+				"mobbutt",
+				"app/assets/stylesheets/adventsroulette/mobile/_buttons.scss"
+			],
+			[
+				"button",
+				"app/assets/stylesheets/adventsroulette/mobile/_buttons.scss"
+			],
+			[
+				"forham",
+				"app/views_mobile/registrations/_form.haml"
+			],
+			[
+				"general",
+				"app/assets/stylesheets/adventsroulette/mobile/_general.scss"
+			],
+			[
+				"welcoscss",
+				"app/assets/stylesheets/adventsroulette/mobile/pages/_welcome.scss"
+			],
+			[
+				"footcoff",
+				"app/assets/javascripts/adventsroulette/views/footer.js.coffee"
+			],
+			[
+				"moabstr",
+				"app/assets/javascripts/adventsroulette/views/modals/modal_abstract.js.coffee"
+			],
+			[
+				"modmana",
+				"app/assets/javascripts/adventsroulette/views/modals/modal_manager.js.coffee"
+			],
+			[
+				"term",
+				"app/assets/javascripts/adventsroulette/views/modals/terms_and_privacy_modal.js.coffee"
+			],
+			[
+				"mabstra",
+				"app/assets/javascripts/adventsroulette/views/modals/modal_abstract.js.coffee"
+			],
+			[
+				"foo",
+				"app/assets/javascripts/adventsroulette/views/footer.js.coffee"
+			],
+			[
+				"terpriv",
+				"app/assets/javascripts/adventsroulette/views/modals/terms_and_privacy_modal.js.coffee"
+			],
+			[
+				"terpri",
+				"app/views/partials/_terms_and_privacy.haml"
+			],
+			[
+				"termsandprivacy",
+				"app/assets/javascripts/adventsroulette/views/modals/terms_and_privacy_modal.js.coffee"
+			],
+			[
+				"prizfr",
+				"app/assets/stylesheets/adventsroulette/desktop/_prize_frame.scss"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"~/job/opensource/midigame/miomiep-gem/miomiep.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+		],
+		"width": 395.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 378.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

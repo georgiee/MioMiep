@@ -7,6 +7,10 @@ describe "io" do
       #@midi = MioMiep.read(File.join(File.dirname(__FILE__), '..','fixtures','sounds', 'SMW-Yoshi_Island.mid'))
     end
     
+    it "it has a time division" do
+      puts @midi.time_division
+    end
+
     it "it has some tracks" do
       puts @midi.tracks.count
     end

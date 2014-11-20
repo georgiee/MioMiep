@@ -1,7 +1,7 @@
 module MioMiep
   class Note
     attr_accessor :note, :velocity
-    KEYS = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"]    
+    KEYS = ["C", "D♯", "D", "E♯", "E", "F", "G♯", "G", "A♯", "A", "B♯", "B"]    
     
     def initialize(note, velocity)
       @note = note
@@ -10,7 +10,7 @@ module MioMiep
 
     def self.note_to_key(note)
       octave_shift = -1
-      octave = ((note) / 12.0).to_i + octave_shift;
+      octave = note / 12 + octave_shift;
       name = KEYS[note % 12] + ("%d" % octave;)
     end
 

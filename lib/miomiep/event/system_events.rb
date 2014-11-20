@@ -1,9 +1,11 @@
 module MioMiep
   module Event
-    
+      
     META_EVENT = 0xFF
     SYS_EX = 0xF0
-    AUTHORIZATION_OR_DIVIDED_SYS_EX = 0xF7
+    
+    #acts as as end of byte marker and is used to detect Authorization SysEx Events
+    END_OF_SYS_EX = 0xF7 
 
     SEQUENCE_NUMBER = 0x00
     TEXT = 0x01

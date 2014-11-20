@@ -169,7 +169,7 @@ describe "parser" do
 
   describe 'system exclusive events' do
     it 'finds normal SysEx' do
-      content = 'some content'.bytes + [0x7F]
+      content = 'some content'.bytes + [MioMiep::Event::END_OF_SYS_EX]
       data = MioMiepHelper.encode_data([0, MioMiep::Event::SYS_EX, content.length] + content, 'c*' )
 
       event = MioMiep::EventParser.parse(data)
@@ -178,7 +178,7 @@ describe "parser" do
 
     it 'finds normal AuthorizationSysEx' do
       content = 'some content'.bytes
-      data = MioMiepHelper.encode_data([0, MioMiep::Event::AUTHORIZATION_OR_DIVIDED_SYS_EX, content.length] + content, 'c*' )
+      data = MioMiepHelper.encode_data([0, MioMiep::Event::END_OF_SYS_EX, content.length] + content, 'c*' )
 
       event = MioMiep::EventParser.parse(data)
       expect(event).to be_kind_of(MioMiep::Event::AuthorizationSysEx)
@@ -193,13 +193,13 @@ describe "parser" do
       
       #continue
       content_2 = 'more content'.bytes
-      data_2 = MioMiepHelper.encode_data([0, MioMiep::Event::AUTHORIZATION_OR_DIVIDED_SYS_EX, content_2.length] + content_2, 'c*' )
+      data_2 = MioMiepHelper.encode_data([0, MioMiep::Event::END_OF_SYS_EX, content_2.length] + content_2, 'c*' )
       event = MioMiep::EventParser.parse(data_2)
       expect(event).to be_kind_of(MioMiep::Event::DividedSysEx)
 
       #complete
-      content_3 = 'end content'.bytes + [0x7F]
-      data_3 = MioMiepHelper.encode_data([0, MioMiep::Event::AUTHORIZATION_OR_DIVIDED_SYS_EX, content_3.length] + content_3, 'c*' )
+      content_3 = 'end content'.bytes + [MioMiep::Event::END_OF_SYS_EX]
+      data_3 = MioMiepHelper.encode_data([0, MioMiep::Event::END_OF_SYS_EX, content_3.length] + content_3, 'c*' )
       event = MioMiep::EventParser.parse(data_3)
       expect(event).to be_kind_of(MioMiep::Event::DividedSysEx)
     end

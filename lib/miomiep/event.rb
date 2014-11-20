@@ -1,8 +1,8 @@
 module MioMiep
-  module Event
-    
+  module Event    
     class Event
       attr_accessor :delta_time
+
       def initialize(delta_time)
         @delta_time = delta_time
       end

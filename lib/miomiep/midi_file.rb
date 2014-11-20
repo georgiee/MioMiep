@@ -149,14 +149,13 @@ module MioMiep
                 return Event::SequencerSpecific.new(delta_time, data)
             end
                     
-          when Event::SYS_EX, Event::AUTHORIZATION_OR_DIVIDED_SYS_EX
-            eof_sys = 0x7F
+          when Event::SYS_EX, Event::END_OF_SYS_EX
             data  = data.read(length)
-            puts "@divided_sys_active #{@divided_sys_active}"
+            
             case event_type
               when Event::SYS_EX
                 puts '#SYS_EX'
-                @divided_sys_active = data.bytes.last != eof_sys
+                @divided_sys_active = data.bytes.last != Event::END_OF_SYS_EX
                 if @divided_sys_active
                   puts 'start ing divided sys ex'
                   return Event::DividedSysEx.new(delta_time, data)
@@ -164,10 +163,10 @@ module MioMiep
                   return Event::SysEx.new(delta_time, data)
                 end
               
-              when Event::AUTHORIZATION_OR_DIVIDED_SYS_EX
+              when Event::END_OF_SYS_EX
                 if @divided_sys_active
                   
-                  if @divided_sys_active = data.bytes.last != eof_sys
+                  if @divided_sys_active = data.bytes.last != Event::END_OF_SYS_EX
                     puts 'continue sys ex message'
                   else
                     puts 'finish sys ex message'

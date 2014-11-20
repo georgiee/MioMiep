@@ -6,6 +6,9 @@ module MioMiep
       def initialize(delta_time)
         @delta_time = delta_time
       end
+      def to_s
+        "delta: %-7d -- " % @delta_time
+      end
     end
     
   end

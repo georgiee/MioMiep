@@ -1,13 +1,18 @@
 module MioMiep
   
   class MidiFile
-    attr_accessor :tracks
+    SINGLE_TRACK = 0
+    MULTI_SYNCHRONOUS = 1
+    MULTI_ASYNCHRONOUS = 2
+
+    attr_accessor :tracks, :format
     
     def initialize(file)
       @reader = ByteReader.new(file)
       @parser = Parser.new
 
       @tracks = []
+      @format = SINGLE_TRACK
     end
 
     def read
@@ -15,6 +20,8 @@ module MioMiep
       header.track_count.times{
         read_track(@reader.read_chunk)
       }
+
+      @format = header.format
     end
     
     def read_track(track_chunk)

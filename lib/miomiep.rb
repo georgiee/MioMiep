@@ -6,6 +6,7 @@ require 'miomiep/midi_file'
 require 'miomiep/parser'
 require 'miomiep/track'
 require 'miomiep/event'
+require 'miomiep/note'
 
 module MioMiep
   class << self

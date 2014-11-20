@@ -43,14 +43,16 @@ module MioMiep
       end
     end
     class Copyright < Text;end
+
+    #This meta event should always have a delta time of 0 and come before all MIDI Channel Events and non-zero delta time events.
     class TrackName < Text;
       def to_s
-        "Event: %-20s| name: #{@text}" % 'track-name'
+        "Event: %-20s| #{@text}" % 'track-name'
       end
     end
     class InstrumentName < Text;
       def to_s
-        "Event: %-20s| name: #{@text}" % 'instrument-name'
+        "Event: %-20s| #{@text}" % 'instrument-name'
       end
       
     end
@@ -140,7 +142,7 @@ module MioMiep
         @data = data
       end
       def to_s
-        "Event: %-20s| data=#{data.bytes}" % ['sequencer-specific']
+        "Event: %-20s|" % ['sequencer-specific'] + "#{data.inspect}"
       end
     end
 

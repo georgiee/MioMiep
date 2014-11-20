@@ -80,33 +80,106 @@ module MioMiep
             length = data.read_varint
             puts "event_sub_type #{ '0x%0X' % event_sub_type}"
             case event_sub_type
-              when 0x59 then #key signature
+              when Event::SEQUENCE_NUMBER
+                raise "length must be 2" unless length == 2
+                msb = data.read_int8
+                lsb = data.read_int8
+                return Event::SequenceNumber.new(delta_time, msb << 7 | lsb)
+              
+              when Event::TEXT
+                text  = data.read(length)
+                return Event::Text.new(delta_time, text)
+
+              when Event::COPYRIGHT_NOTICE
+                text  = data.read(length)
+                return Event::Copyright.new(delta_time, text)
+
+              when Event::TRACK_NAME
+                text  = data.read(length)
+                return Event::TrackName.new(delta_time, text)
+              
+              when Event::INSTRUMENT_NAME
+                text  = data.read(length)
+                return Event::InstrumentName.new(delta_time, text)
+              
+              when Event::LYRICS
+                text  = data.read(length)
+                return Event::Lyrics.new(delta_time, text)
+
+              when Event::MARKER
+                text  = data.read(length)
+                return Event::Marker.new(delta_time, text)
+
+              when Event::CUE_POINT
+                text  = data.read(length)
+                return Event::CuePoint.new(delta_time, text)
+
+              when Event::CHANNEL_PREFIX
+                channel  = data.read_int8
+                return Event::ChannelPrefix.new(delta_time, channel)
+              
+              when Event::END_OF_TRACK
+                return Event::EndOfTrack.new(delta_time)
+
+              when Event::SET_TEMPO
+                raise "length must be 3" unless length == 3
+                
+                microseconds = data.read_int24
+                return Event::SetTempo.new(delta_time, microseconds)
+              
+              when Event::SMPTE_OFFSET
+                raise "length must be 5" unless length == 5
+                
+                hours, minutes, seconds, frames, subframes = 5.times.map{ data.read_int8 }
+                return Event::SMPTEOffset.new(delta_time, hours, minutes, seconds, frames, subframes)
+              
+              when Event::TIME_SIGNATURE
+                raise "length must be 4" unless length == 4
+                numer, denom, metro, qnotes = 4.times.map{ data.read_int8 }
+                return Event::TimeSignature.new(delta_time, numer, denom, metro, qnotes)
+
+              when Event::KEY_SIGNATURE
                 raise "length must be 2" unless length == 2
                 key = data.read_int8
                 scale = data.read_int8(true)
-              
-              when 0x58 then #'time signature'
-                raise "length must be 4" unless length == 4
-                #Numer  Denom Metro 32nds
-                data.read_int8
-                data.read_int8
-                data.read_int8
-                data.read_int8
-              when 0x7F #'Sequencer Specific'
-                data = data.read(length)
-                puts data.inspect
-              when 0x51 #'Sequencer Specific'
-                raise "length must be 3" unless length == 3
-                
-                microsecondsPerBeat = data.read_int24
-                #puts "microsecondsPerBeat #{microsecondsPerBeat}"
-              when 0x2F #End Of Track
-                raise "length must be 3" unless length == 0
-                puts 'End Of Track'
-                
+                return Event::KeySignature.new(delta_time, key, scale)
+
+              when Event::SEQUENCER_SPECIFIC
+                data  = data.read(length)
+                return Event::SequencerSpecific.new(delta_time, data)
             end
-          when 0xf0 then # 'sysex ------event'
-          when 0xf7 then # 'divided sysex ------event'
+                    
+          when Event::SYS_EX, Event::AUTHORIZATION_OR_DIVIDED_SYS_EX
+            eof_sys = 0x7F
+            data  = data.read(length)
+            puts "@divided_sys_active #{@divided_sys_active}"
+            case event_type
+              when Event::SYS_EX
+                puts '#SYS_EX'
+                @divided_sys_active = data.bytes.last != eof_sys
+                if @divided_sys_active
+                  puts 'start ing divided sys ex'
+                  return Event::DividedSysEx.new(delta_time, data)
+                else
+                  return Event::SysEx.new(delta_time, data)
+                end
+              
+              when Event::AUTHORIZATION_OR_DIVIDED_SYS_EX
+                if @divided_sys_active
+                  
+                  if @divided_sys_active = data.bytes.last != eof_sys
+                    puts 'continue sys ex message'
+                  else
+                    puts 'finish sys ex message'
+                    @divided_sys_active = false
+                  end
+                  
+                  return Event::DividedSysEx.new(delta_time, data)
+                  
+                else
+                  return Event::AuthorizationSysEx.new(delta_time, data)
+                end
+            end            
         end
       else
         #well. this must be a channel event

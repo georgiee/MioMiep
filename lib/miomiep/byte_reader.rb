@@ -82,5 +82,14 @@ module MioMiep
       format = "%0#{length_in_bits}b"
       "#{(format % value).scan(/.{1,8}/m)}"
     end
+    
+    def self.int24_to_bytes(value)
+      bytes = []
+      bytes << ((value >> 16) & 0xFF)
+      bytes << ((value >> 8) & 0xFF)
+      bytes << ((value) & 0xFF)
+
+      #bytes.pack('c*')
+    end
   end
 end

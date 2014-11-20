@@ -55,7 +55,6 @@ module MioMiep
         #puts "variable byte:  #{ByteReader.debug(value, 8)} (%0X)" % value
 
         unless (value & 0x80).zero?
-          #front bit is 1, merge with previous byte
           result += (value & 0x7f);
           result <<= 7;
         else

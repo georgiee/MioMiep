@@ -35,7 +35,8 @@ module MioMiep
       track_data = track_chunk.data
       
       while (!track_data.eof)
-        track.events << @parser.find_event(track_data)
+        event = @parser.find_event(track_data)
+        track.add_event(event)
       end
 
       @tracks << track

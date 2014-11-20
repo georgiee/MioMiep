@@ -30,34 +30,38 @@ module MioMiep
       event_type_byte = @event_type
       #Running status is only implemented for Voice Category messages (ie, Status is 0x80 to 0xEF).
       #so check f  
-      
+
       if (event_type_byte & 0x80).zero?
-        #running status
+        #running status, ie. repeat last event with new paramters
         param1 = event_type_byte
-        param2 = data.read_int8
+        
         event_type_byte = @last_event_type_byte
       else
         param1 = data.read_int8
-        param2 = data.read_int8
+        
 
         @last_event_type_byte = event_type_byte
       end
-      
       event_type = event_type_byte >> 4
+
       channel = event_type_byte&0x0f #0 - 15
       
       case event_type 
         
         when Event::NOTE_OFF
+          param2 = data.read_int8
           return Event::NoteOffEvent.new(channel, @delta_time, param1, param2)
 
         when Event::NOTE_ON
+          param2 = data.read_int8
           return Event::NoteOnEvent.new(channel, @delta_time, param1, param2)
 
         when Event::NOTE_AFTERTOUCH
+          param2 = data.read_int8
           return Event::NoteAfterTouchEvent.new(channel, @delta_time, param1, param2)
 
         when Event::CONTROLLER
+          param2 = data.read_int8
           return Event::ControllerEvent.new(channel, @delta_time, param1, param2)
         
         when Event::PROGRAM_CHANGE
@@ -67,6 +71,7 @@ module MioMiep
           return Event::ChannelAfterTouchEvent.new(channel, @delta_time, param1)
         
         when Event::PITCH_BEND
+          param2 = data.read_int8
           return Event::PitchBendEvent.new(channel, @delta_time, param2 << 7 | param1) #p1=lsb, p2=msb
         
         else

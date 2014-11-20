@@ -2,12 +2,14 @@ module MioMiep
   module Event    
     class Event
       attr_accessor :delta_time
+      attr_accessor :total_delta_time
 
       def initialize(delta_time)
         @delta_time = delta_time
+        @total_delta_time = 0
       end
       def to_s
-        "delta: %-7d -- " % @delta_time
+        "time: %d, (%d) -- " % [@total_delta_time, @delta_time]
       end
     end
     

@@ -7,6 +7,7 @@ require 'miomiep/parser'
 require 'miomiep/track'
 require 'miomiep/event'
 require 'miomiep/note'
+require 'miomiep/heartbeat'
 
 module MioMiep
   class << self

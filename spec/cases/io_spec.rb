@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "io" do
   describe 'read midi' do
     before do
-      @midi = MioMiep.read(File.join(File.dirname(__FILE__), '..','fixtures', 'test.mid'))
+      @midi = MioMiep.read(File.join(File.dirname(__FILE__), '..','fixtures', 'Mwyoshi.mid'))
     end
     
     it "it has some tracks" do
@@ -11,8 +11,7 @@ describe "io" do
     end
 
     it "a track has some events" do
-      puts "\nFIRST TRACK", @midi.tracks.first.events
-      puts "\nSECOND TRACK",  @midi.tracks.last.events
+      puts @midi.tracks[2].events
     end
 
     it "a track has a name" do

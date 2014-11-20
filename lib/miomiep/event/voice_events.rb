@@ -39,12 +39,12 @@ module MioMiep
 
     class NoteOffEvent < NoteEvent;
       def to_s
-        "Event: %-18s| " % 'note-off' + super
+        "Event: %-20s| " % 'note-off' + super
       end
     end
     class NoteOnEvent < NoteEvent;
       def to_s
-        "Event: %-18s| " % 'note-on' + super
+        "Event: %-20s| " % 'note-on' + super
       end
     end
 
@@ -66,7 +66,7 @@ module MioMiep
       end
       
       def to_s
-        "Event: %-18s| " % 'controller' + super + (", type: #{@controller} value: #{@value}") 
+        "Event: %-20s| " % 'controller' + super + (", type: #{@controller} value: #{@value}") 
       end
     end
 
@@ -80,7 +80,7 @@ module MioMiep
       end
       
       def to_s
-        ("Event: %-18s| " + super + ", number: #{number}") % 'program-change'
+        ("Event: %-20s| " + super + ", number: #{number}") % 'program-change'
       end
     end
 

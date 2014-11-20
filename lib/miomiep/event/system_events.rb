@@ -45,12 +45,12 @@ module MioMiep
     class Copyright < Text;end
     class TrackName < Text;
       def to_s
-        "Event: %-18s| name: #{@text}" % 'track-name'
+        "Event: %-20s| name: #{@text}" % 'track-name'
       end
     end
     class InstrumentName < Text;
       def to_s
-        "Event: %-18s| name: #{@text}" % 'instrument-name'
+        "Event: %-20s| name: #{@text}" % 'instrument-name'
       end
       
     end
@@ -82,6 +82,10 @@ module MioMiep
         @key = key
         @scale = scale
       end
+
+      def to_s
+        "Event: %-20s| key=#{key}, scale=#{scale} " % ['key-signature']
+      end
     end
 
     class SetTempo < Event
@@ -93,7 +97,7 @@ module MioMiep
       end
 
       def to_s
-        "Event: %-18s| microseconds: #{@microseconds}" % 'set-tempo'
+        "Event: %-20s| microseconds: #{@microseconds}" % 'set-tempo'
       end
     end
 
@@ -122,6 +126,10 @@ module MioMiep
         @metro = metro
         @qnotes = qnotes
       end
+      
+      def to_s
+        "Event: %-20s| numer: #{@numer}, denom: #{@denom}, metro: #{@metro}, qnotes: #{@qnotes}" % 'time-signature'
+      end
     end
 
     class SequencerSpecific < Event
@@ -130,6 +138,9 @@ module MioMiep
       def initialize(delta_time, data)
         super(delta_time)
         @data = data
+      end
+      def to_s
+        "Event: %-20s| data=#{data.bytes}" % ['sequencer-specific']
       end
     end
 

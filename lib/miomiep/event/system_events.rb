@@ -43,8 +43,17 @@ module MioMiep
       end
     end
     class Copyright < Text;end
-    class TrackName < Text;end
-    class InstrumentName < Text;end
+    class TrackName < Text;
+      def to_s
+        "Event: %-18s| name: #{@text}" % 'track-name'
+      end
+    end
+    class InstrumentName < Text;
+      def to_s
+        "Event: %-18s| name: #{@text}" % 'instrument-name'
+      end
+      
+    end
     class Lyrics < Text;end
     class Marker < Text;end
     class CuePoint < Text;end
@@ -58,7 +67,11 @@ module MioMiep
       end
     end
 
-    class EndOfTrack < Event; end
+    class EndOfTrack < Event;
+      def to_s
+        "Event: end-of-track"
+      end
+    end
 
 
     class KeySignature < Event
@@ -77,6 +90,10 @@ module MioMiep
       def initialize(delta_time, microseconds)
         super(delta_time)
         @microseconds = microseconds
+      end
+
+      def to_s
+        "Event: %-18s| microseconds: #{@microseconds}" % 'set-tempo'
       end
     end
 

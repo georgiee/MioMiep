@@ -15,6 +15,10 @@ module MioMiep
         super(delta_time)
         @channel = channel
       end
+
+      def to_s
+        ("channel: %3s" % @channel)
+      end
     end
 
     class NoteEvent < ChannelEvent
@@ -27,10 +31,22 @@ module MioMiep
       end
 
       PITCHES = %w(C C# D D# E F F# G G# A A# B)
+
+      def to_s
+        super + (", note: #{note}, velocity: #{velocity}")
+      end
     end
 
-    class NoteOffEvent < NoteEvent; end
-    class NoteOnEvent < NoteEvent; end
+    class NoteOffEvent < NoteEvent;
+      def to_s
+        "Event: %-18s| " % 'note-off' + super
+      end
+    end
+    class NoteOnEvent < NoteEvent;
+      def to_s
+        "Event: %-18s| " % 'note-on' + super
+      end
+    end
 
     class NoteAfterTouchEvent < ChannelEvent
       attr_accessor :note, :value
@@ -48,18 +64,29 @@ module MioMiep
         @controller = controller
         @value = value
       end
+      
+      def to_s
+        "Event: %-18s| " % 'controller' + super + (", type: #{@controller} value: #{@value}") 
+      end
     end
 
     class ProgramChangeEvent < ChannelEvent
+      # the program number of the new instrument/patch.
       attr_accessor :number
+      
       def initialize(channel, delta_time, number)
         super(channel, delta_time)
         @number = number
+      end
+      
+      def to_s
+        ("Event: %-18s| " + super + ", number: #{number}") % 'program-change'
       end
     end
 
     class ChannelAfterTouchEvent < ChannelEvent
       attr_accessor :value
+      
       def initialize(channel, delta_time, value)
         super(channel, delta_time)
         @value = value

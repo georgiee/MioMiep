@@ -3,6 +3,7 @@ require 'ostruct'
 require 'miomiep/version'
 require 'miomiep/byte_reader'
 require 'miomiep/midi_file'
+require 'miomiep/parser'
 require 'miomiep/track'
 require 'miomiep/event'
 

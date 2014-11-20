@@ -60,10 +60,10 @@ module MioMiep
           result <<= 7;
         else
           if result > 0
-            puts 'merging variable bytes'
-            puts "current variable:  #{ByteReader.debug(result, 16)}"
-            puts "last variable byte:  #{ByteReader.debug(value, 8)}"
-            puts "new variable:  #{ByteReader.debug(result + value, 16)}"
+            #puts 'merging variable bytes'
+            #puts "current variable:  #{ByteReader.debug(result, 16)}"
+            #puts "last variable byte:  #{ByteReader.debug(value, 8)}"
+            #puts "new variable:  #{ByteReader.debug(result + value, 16)}"
           end
           result = result + value
 

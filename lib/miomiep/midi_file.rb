@@ -5,10 +5,9 @@ module MioMiep
     MULTI_SYNCHRONOUS = 1
     MULTI_ASYNCHRONOUS = 2
 
-    attr_accessor :tracks, :format, :time_division
+    attr_accessor :tracks, :format, :time_division, :heartbeat
     
     def initialize(file)
-      
       @reader = ByteReader.new(file)
       @parser = Parser.new
 
@@ -19,6 +18,9 @@ module MioMiep
     def read
       header = MidiHeader.parse(@reader.read_chunk)
       @time_division = header.time_division
+      
+      @heartbeat = Heartbeat.new
+      @heartbeat.ppq = @time_division.count
 
       raise "oh, smpte is not supported yet!" if @time_division.is_smpte?
 
@@ -30,8 +32,17 @@ module MioMiep
       @format = header.format
     end
     
+    def total_duration
+      if @format == MULTI_ASYNCHRONOUS
+        duration = @tracks.inject(0) { |sum, track| sum + track.total_duration}
+      else
+        duration = @tracks.max_by{ |track| track.total_duration }
+        duration.total_duration
+      end
+    end
+
     def read_track(track_chunk)
-      track = Track.new(time_division: @time_division)
+      track = Track.new(heartbeat: @heartbeat)
 
       if (track_chunk.id != 'MTrk')
         raise "Unexpected chunk - expected MTrk, got "+ track_chunk.id;
@@ -40,8 +51,14 @@ module MioMiep
       track_data = track_chunk.data
       
       while (!track_data.eof)
-        event = @parser.find_event(track_data)
-        track.add_event(event)
+        begin
+          event = @parser.find_event(track_data)
+          unless event.nil?
+            track.add_event(event)
+          end
+        rescue
+          puts 'soem error during event parsing'
+        end
       end
 
       track

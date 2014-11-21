@@ -17,7 +17,7 @@ module MioMiep
       end
 
       def to_s
-        super + ("channel: %3s" % @channel)
+        super + (" channel: %3s" % @channel)
       end
     end
 

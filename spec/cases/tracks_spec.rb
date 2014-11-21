@@ -3,9 +3,24 @@ require 'midilib'
 
 describe "tracks" do
   before do
-    #@path = File.join(File.dirname(__FILE__), '..','fixtures','test.mid')
-    @path = File.join(File.dirname(__FILE__), '..','fixtures','sounds', 'SMW-Yoshi_Island.mid')
+    #@path = File.join(File.dirname(__FILE__), '..','fixtures','sounds','Mwyoshi.mid')
+    #@path = File.join(File.dirname(__FILE__), '..','fixtures','sounds','SMWYoshi.mid')
+    #problems time
+    #@path = File.join(File.dirname(__FILE__), '..','fixtures','sounds','YI_Maps.mid')
+    
+    #problems nil event
+    #@path = File.join(File.dirname(__FILE__), '..','fixtures','sounds','YITitle.mid')
 
+    #problems nil event
+    @path = File.join(File.dirname(__FILE__), '..','fixtures','sounds','YISLE20S.mid')
+    
+    #problems nil event
+    #@path = File.join(File.dirname(__FILE__), '..','fixtures','sounds','yi-stg1.mid')
+    
+    #problems here:! (nil event)
+    #@path = File.join(File.dirname(__FILE__), '..','fixtures','sounds','smw2-2.mid')
+    
+    #@path = File.join(File.dirname(__FILE__), '..','fixtures','sounds', 'SMW-Yoshi_Island.mid')
     @midi = MioMiep.read(@path)
     @track  = @midi.tracks[1]
   end
@@ -20,6 +35,18 @@ describe "tracks" do
     seq
   end
 
+  it 'total duration (with set tempo' do
+    puts @midi.tracks
+
+    puts 'format %s' % @midi.format
+    puts "total_duration-- #{@midi.total_duration}"
+    #seq = open_midi_with_midilib
+    #seq.tracks[1].events.each {|t| puts t.time_from_start}
+
+    puts @midi.heartbeat.inspect
+    puts @midi.heartbeat.bpm
+  end
+
   it 'has events' do
     track = MioMiep::Track.new
     expect(track).to respond_to(:events)
@@ -27,11 +54,6 @@ describe "tracks" do
 
   it 'agregate events delta times' do
     puts @track.to_s
-
-    #seq = open_midi_with_midilib
-    #seq.tracks[1].events.each do |event|
-    #  puts "delta_time #{event.inspect}"
-    #end
   end
 
   it 'ticks in seconds' do

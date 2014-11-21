@@ -11,7 +11,9 @@ module MioMiep
         @time = 0
       end
       def to_s
-        "time: %0.02f, %d, (%d) -- " % [@time, @total_delta_time, @delta_time]
+        value = "time: %0.02fs (delta: %d, total: %d)" % [@time, @delta_time, @total_delta_time]
+        value = "%-0s -- " % value
+        value + self.class.to_s
       end
     end
     

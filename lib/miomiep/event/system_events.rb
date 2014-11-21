@@ -41,6 +41,9 @@ module MioMiep
         super(delta_time)
         @text = text
       end
+      def to_s
+        "Event: %-20s| #{@text}" % 'text'
+      end
     end
     class Copyright < Text;end
 
@@ -57,7 +60,11 @@ module MioMiep
       
     end
     class Lyrics < Text;end
-    class Marker < Text;end
+    class Marker < Text
+      def to_s
+        "Event: %-20s| #{@text}" % 'marker'
+      end
+    end
     class CuePoint < Text;end
     
     class ChannelPrefix < Event
@@ -66,6 +73,10 @@ module MioMiep
       def initialize(delta_time, channel)
         super(delta_time)
         @channel = channel
+      end
+
+      def to_s
+        "Sys  : %-20s| " % 'channel-prefix' + super + ("value: #{@channel}") 
       end
     end
 
@@ -123,14 +134,18 @@ module MioMiep
       def initialize(delta_time, numer, denom, metro, qnotes)
         super(delta_time)
 
-        @numer = numer
-        @denom = denom
-        @metro = metro
-        @qnotes = qnotes
+        @numer = numer.to_i
+        @denom = denom.to_i
+        @metro = metro.to_i
+        @qnotes = qnotes.to_i
       end
       
       def to_s
         "Event: %-20s| numer: #{@numer}, denom: #{@denom}, metro: #{@metro}, qnotes: #{@qnotes}" % 'time-signature'
+      end
+
+      def params
+        OpenStruct.new(numer: numer, denom: denom, metro: metro, qnotes: qnotes)
       end
     end
 

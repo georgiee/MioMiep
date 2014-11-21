@@ -8,6 +8,7 @@ module MioMiep
     attr_accessor :tracks, :format, :time_division
     
     def initialize(file)
+      
       @reader = ByteReader.new(file)
       @parser = Parser.new
 
@@ -17,16 +18,20 @@ module MioMiep
 
     def read
       header = MidiHeader.parse(@reader.read_chunk)
+      @time_division = header.time_division
+
+      raise "oh, smpte is not supported yet!" if @time_division.is_smpte?
+
       header.track_count.times{
-        read_track(@reader.read_chunk)
+        track = read_track(@reader.read_chunk)
+        @tracks << track
       }
 
       @format = header.format
-      @time_division = header.time_division
     end
     
     def read_track(track_chunk)
-      track = Track.new
+      track = Track.new(time_division: @time_division)
 
       if (track_chunk.id != 'MTrk')
         raise "Unexpected chunk - expected MTrk, got "+ track_chunk.id;
@@ -39,7 +44,7 @@ module MioMiep
         track.add_event(event)
       end
 
-      @tracks << track
+      track
     end
 
     def self.parse(file)
@@ -91,8 +96,9 @@ module MioMiep
   class TimeDivision
     attr_accessor :fps, :smpte, :count
     def initialize
+      @count = Heartbeat::DEFAULT_PPQ
+
       @smpte = false
-      @count = -1
       @fps = -1
     end
     

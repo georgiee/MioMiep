@@ -22,27 +22,6 @@ describe "io" do
       puts @midi.tracks[0].events
       puts @midi.tracks[1].events
     end
-
-    it 'heartbeat' do
-      heartbeat = MioMiep::Heartbeat.new
-      heartbeat.ppq = 96 #fixe for midi file
-      heartbeat.bpm = 130
-
-      d = heartbeat.ticks_to_duration(144)
-
-      puts "heartbeat.bpm #{heartbeat.bpm}"
-      puts "heartbeat.ppq #{heartbeat.ppq}"
-      puts "heartbeat.mpq #{heartbeat.mpq}"
-      puts "heartbeat.qls #{heartbeat.qls}"
-      puts "heartbeat.tdps #{heartbeat.tdps}"
-
-      puts "duration #{d}"
-
-      
-
-
-      #@midi.tracks[1].events.inject{|sum,x| sum + x }
-    end
     
     it "has absolute tiem values" do
       seq = MIDI::Sequence.new()

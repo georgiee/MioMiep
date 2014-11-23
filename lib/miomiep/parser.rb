@@ -1,7 +1,8 @@
 module MioMiep
   class Parser
     def find_event(data)
-      @delta_time = data.read_varint
+      @delta_time = 0
+      #@delta_time = data.read_varint
       @event_type = data.read_int8
       
       if((@event_type & 0xf0) == 0xf0) #front four bits are 1 (11110000)

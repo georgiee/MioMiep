@@ -4,12 +4,12 @@ module MioMiep
     
     attr_accessor :events, :aggregated_delta_time, :total_duration
 
-    def initialize(options = {})
-      @events = []
+    def initialize(events)
+      @events = events || []
       @total_duration = 0
       @aggregated_delta_time = 0
 
-      @heartbeat = options.fetch(:heartbeat, Heartbeat.new)
+      #@heartbeat = options.fetch(:heartbeat, Heartbeat.new)
       @channel_map = []
     end
 

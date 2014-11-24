@@ -10,6 +10,7 @@ require 'miomiep/event'
 require 'miomiep/note'
 require 'miomiep/heartbeat'
 require 'miomiep/decoder'
+require 'miomiep/message'
 
 module MioMiep
   DEFAULT_MIDDLE_C = 69 #General MIDI Standard, A440 is note 69

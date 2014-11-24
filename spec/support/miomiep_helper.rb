@@ -1,11 +1,11 @@
 module MioMiepHelper
   class << self
-    def create_meta_event_data(delta, status, substatus, *params)
-      encode_data([delta, status, substatus, params.length] + params, 'c*')
+    def create_meta_event_data(status, substatus, *params)
+      encode_data([status, substatus, params.length] + params, 'c*')
     end
 
-    def create_voice_event_data(delta, status, channel, param1, param2)
-      encode_data([delta, (status << 4) | channel, param1, param2], 'cccc')
+    def create_voice_event_data(status, channel, param1, param2)
+      encode_data([(status << 4) | channel, param1, param2], 'ccc')
     end
 
     def encode_data(bytes, encoding)

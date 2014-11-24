@@ -51,13 +51,9 @@ module MioMiep
       track_data = track_chunk.data
       
       while (!track_data.eof)
-        begin
-          event = @parser.find_event(track_data)
-          unless event.nil?
-            track.add_event(event)
-          end
-        rescue
-          puts 'soem error during event parsing'
+        event = @parser.find_event(track_data)
+        unless event.nil?
+          track.add_event(event)
         end
       end
 

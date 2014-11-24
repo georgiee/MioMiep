@@ -15,6 +15,11 @@ module MioMiep
     LYRICS = 0x05
     MARKER = 0x06
     CUE_POINT = 0x07
+    #this seems to be not part of the original standard
+    # http://www.midi.org/techspecs/rp19.php
+    PROGRAM_NAME = 0x08
+    DEVICE_NAME = 0x09
+
     CHANNEL_PREFIX = 0x20
     END_OF_TRACK = 0x2F
 

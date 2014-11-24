@@ -5,7 +5,7 @@ module MioMiep
     attr_accessor :events, :aggregated_delta_time, :total_duration
 
     def initialize(events)
-      @events = events || []
+      @events = []
       @total_duration = 0
       @aggregated_delta_time = 0
 
@@ -20,7 +20,7 @@ module MioMiep
 
     def add_event(event)
 
-      events << event
+      @events << event
 
       if(event.kind_of? (Event::ChannelEvent))
         
@@ -38,15 +38,15 @@ module MioMiep
 
       @aggregated_delta_time += event.delta_time
       event.total_delta_time = @aggregated_delta_time
-      event.time = @heartbeat.ticks_to_duration(@aggregated_delta_time)  
+      #event.time = @heartbeat.ticks_to_duration(@aggregated_delta_time)  
 
       #TODO: is set-tempo global or per track ? Now global as we share a global heartebat instance.
       if(event.kind_of? (Event::SetTempo))
-        @heartbeat.tempo = event.microseconds
+        #@heartbeat.tempo = event.microseconds
       end  
       
       if(event.kind_of? (Event::TimeSignature))
-        @heartbeat.time_signature = event.params
+        #@heartbeat.time_signature = event.params
       end
       
       @total_duration = event.time
@@ -64,7 +64,7 @@ module MioMiep
       header = "\n----- Track\n" 
       header += "Duration: %0.02fs\n" % @total_duration
       header += "Name: #{self.name}\n"
-      header += "PPQ: %s" % @heartbeat.ppq
+      #header += "PPQ: %s" % @heartbeat.ppq
       header += "\n"
       header += "-----"
       header += "\n"

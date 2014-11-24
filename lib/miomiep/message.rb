@@ -8,8 +8,14 @@ require 'miomiep/messages/time_signature'
 require 'miomiep/messages/key_signature'
 require 'miomiep/messages/sequencer_specific'
 
-require 'miomiep/messages/channel'
 require 'miomiep/messages/voice'
+require 'miomiep/messages/controller'
+require 'miomiep/messages/program_change'
+require 'miomiep/messages/channel_aftertouch'
+require 'miomiep/messages/pitch_bend'
+
+require 'miomiep/messages/system_exclusive'
+require 'miomiep/messages/authorization_sys_ex'
 
 
 module MioMiep

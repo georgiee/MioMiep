@@ -66,7 +66,7 @@ module MioMiep
     
     def read_message(data)
       @status_byte = data.read_int8
-      puts "status_byte %08b" % @status_byte
+      #puts "status_byte %08b" % @status_byte
       
       if (@status_byte & 0xF0) != 0xF0
         find_voice_message(data)
@@ -78,24 +78,62 @@ module MioMiep
     end
     
     def find_voice_message(data)
-      puts "find voice message"
-
       status = @status_byte >> 4
       channel = @status_byte & 0x0f #0 - 15
       
       param1 = data.read_int8
-      puts "status %04b" % status, status
+      #puts "status %04b" % status, status
       
       case status
         when Message::NOTE_ON, Message::NOTE_OFF, Message::NOTE_AFTERTOUCH
           note = param1
           velocity = data.read_int8
           Message::Voice.new(status, note, velocity)
+        
+        when Message::CONTROLLER
+          controller_type = param1
+          value = data.read_int8
+          Message::Controller.new(controller_type, value)
+
+        when Message::PROGRAM_CHANGE
+          program_number = param1
+          Message::ProgramChange.new(program_number)
+
+        when Message::CHANNEL_AFTERTOUCH
+          amount = param1
+          Message::ChannelAftertouch.new(amount)
+        
+        when Message::PITCH_BEND
+          param2 = data.read_int8
+          Message::PitchBend.new(param2 << 7 | param1)#p1=lsb, p2=msb
       end      
     end
 
     def find_system_message(data)
-      puts "find_system_message"
+      length = data.read_varint
+      data  = data.read(length)
+      case @status_byte
+        when Message::SYS_EX
+          message = Message::SystemExclusive.new
+          message << data.bytes 
+          message.incomplete = data.bytes.last != Message::END_OF_SYS_EX
+          
+          @last_sys_ex = message
+
+        
+        when Message::END_OF_SYS_EX
+          if (@last_sys_ex && @last_sys_ex.incomplete?)
+            @last_sys_ex << data
+            
+            if data.bytes.last == Message::END_OF_SYS_EX
+              @last_sys_ex.complete! 
+            end
+
+            @last_sys_ex
+          else
+            message = Message::AuthorizationSysEx.new(data)
+          end
+      end
     end
 
     def find_meta_message(data)

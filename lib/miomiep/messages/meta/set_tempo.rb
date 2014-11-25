@@ -1,15 +1,12 @@
 module MioMiep
   module Message
     
-    class SetTempo
+    class SetTempo < MetaMessage
       attr_accessor :microseconds
       
       def initialize(microseconds)
+        super(Message::SET_TEMPO)
         @microseconds = microseconds
-      end
-
-      def to_s
-        "SetTempoMessage; microseconds: %d" % @microseconds
       end
     end
   end

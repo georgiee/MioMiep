@@ -1,16 +1,16 @@
 module MioMiep
   module Message
     
-    class Text
-      attr_accessor :text, :type
+    class Text < MetaMessage
+      attr_accessor :text
       
       def initialize(type, text)
-        @type = type
+        super(type)
         @text = text  
       end
 
       def to_s
-        "TextMessage; status: %s, text: %s" % [Message.type_to_string(type), text]
+        "%s -- text: %s" % [meta_name, text]
       end
     end
   end

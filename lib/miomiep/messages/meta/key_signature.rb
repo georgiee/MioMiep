@@ -1,16 +1,13 @@
 module MioMiep
   module Message
     
-    class KeySignature
+    class KeySignature < MetaMessage
       attr_accessor :key, :scale
 
       def initialize(key, scale)
+        super(Message::KEY_SIGNATURE)
         @key = key
         @scale = scale
-      end
-
-      def to_s
-        "KeySignature: key=#{key}, scale=#{scale} "
       end
     end
   end

@@ -1,21 +1,22 @@
 module MioMiep
   class Decoder
+    attr_accessor :last_status_byte
+    
     def initialize
       @parser = Parser.new
     end
     
     def read(file)
       @byte_reader = ByteReader.new(file)
-
       header = read_header
-      
       tracks = []
       
-      #header.track_count.times{
-      1.times{
+      header.track_count.times{
         track = read_track
         tracks << track unless track.nil?
       }
+
+      @midi_file = MidiFile.new({tracks: tracks, format: 0, timing_division:0 })
     end
 
     #private
@@ -49,7 +50,7 @@ module MioMiep
           total_time += delta_time
 
           message = read_message(track_data)
-
+          
           unless message.nil?
             event = MidiEvent.new(message, total_time)
             events << event
@@ -71,41 +72,61 @@ module MioMiep
       if (@status_byte & 0xF0) != 0xF0
         find_voice_message(data)
       elsif @status_byte == 0xFF
+        @last_status_byte = nil
         find_meta_message(data)
       else
+        @last_status_byte = nil
         find_system_message(data)
       end
     end
     
+    def running_status?
+      # 1. Voice message msb are between 1000 and 1110 (0x80  - 0xE0)
+      # 2. Parameters are restricted to 0 - 127 (0x7F) so they get never mistaken as an event
+      # 3. So if the most significant bit is 0, we have a running status.
+      
+      running = (@status_byte & 0x80).zero?
+      raise "Running status detected with no previous status available" if @last_status_byte.nil? && running
+
+      running
+    end
+
     def find_voice_message(data)
+      if running_status?
+        #running status detected, so our status byte is our param1
+        param1 = @status_byte
+        @status_byte = @last_status_byte
+      else
+        param1 = data.read_int8
+        @last_status_byte = @status_byte
+      end
+
+
       status = @status_byte >> 4
       channel = @status_byte & 0x0f #0 - 15
-      
-      param1 = data.read_int8
-      #puts "status %04b" % status, status
       
       case status
         when Message::NOTE_ON, Message::NOTE_OFF, Message::NOTE_AFTERTOUCH
           note = param1
           velocity = data.read_int8
-          Message::Voice.new(status, note, velocity)
+          Message::VoiceMessage.new(@status_byte, channel, note, velocity)
         
         when Message::CONTROLLER
           controller_type = param1
           value = data.read_int8
-          Message::Controller.new(controller_type, value)
+          Message::Controller.new(@status_byte, channel, controller_type, value)
 
         when Message::PROGRAM_CHANGE
           program_number = param1
-          Message::ProgramChange.new(program_number)
+          Message::ProgramChange.new(@status_byte, channel, program_number)
 
         when Message::CHANNEL_AFTERTOUCH
           amount = param1
-          Message::ChannelAftertouch.new(amount)
+          Message::ChannelAftertouch.new(@status_byte, channel, amount)
         
         when Message::PITCH_BEND
           param2 = data.read_int8
-          Message::PitchBend.new(param2 << 7 | param1)#p1=lsb, p2=msb
+          Message::PitchBend.new(@status_byte, channel, param2 << 7 | param1)#p1=lsb, p2=msb
       end      
     end
 
@@ -158,8 +179,8 @@ module MioMiep
           Message::Text.new(meta_type, text)
         
         when Message::CHANNEL_PREFIX
-          type = data.read_int8
-          Message::ChannelPrefix.new(type)
+          channel_type = data.read_int8
+          Message::ChannelPrefix.new(channel_type)
         
         when Message::END_OF_TRACK
           Message::EndOfTrack.instance

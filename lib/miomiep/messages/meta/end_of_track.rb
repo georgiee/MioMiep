@@ -2,11 +2,10 @@ require 'singleton'
 
 module MioMiep
   module Message
-    class EndOfTrack
+    class EndOfTrack < MetaMessage
       include Singleton
-
-      def to_s
-        "EndOfTrack"
+      def initialize
+        super(Message::END_OF_TRACK)
       end
     end
   end

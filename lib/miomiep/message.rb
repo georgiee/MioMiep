@@ -1,21 +1,25 @@
-require 'miomiep/messages/text'
-require 'miomiep/messages/set_tempo'
-require 'miomiep/messages/sequence_number'
-require 'miomiep/messages/channel_prefix'
-require 'miomiep/messages/end_of_track'
-require 'miomiep/messages/smpte_offset'
-require 'miomiep/messages/time_signature'
-require 'miomiep/messages/key_signature'
-require 'miomiep/messages/sequencer_specific'
+require 'miomiep/messages/midi_message'
 
-require 'miomiep/messages/voice'
-require 'miomiep/messages/controller'
-require 'miomiep/messages/program_change'
-require 'miomiep/messages/channel_aftertouch'
-require 'miomiep/messages/pitch_bend'
+require 'miomiep/messages/meta/meta_message'
+require 'miomiep/messages/meta/text'
+require 'miomiep/messages/meta/set_tempo'
+require 'miomiep/messages/meta/sequence_number'
+require 'miomiep/messages/meta/channel_prefix'
+require 'miomiep/messages/meta/end_of_track'
+require 'miomiep/messages/meta/smpte_offset'
+require 'miomiep/messages/meta/time_signature'
+require 'miomiep/messages/meta/key_signature'
+require 'miomiep/messages/meta/sequencer_specific'
 
-require 'miomiep/messages/system_exclusive'
-require 'miomiep/messages/authorization_sys_ex'
+require 'miomiep/messages/voice/channel_message'
+require 'miomiep/messages/voice/voice_message'
+require 'miomiep/messages/voice/controller'
+require 'miomiep/messages/voice/program_change'
+require 'miomiep/messages/voice/channel_aftertouch'
+require 'miomiep/messages/voice/pitch_bend'
+
+require 'miomiep/messages/system/system_exclusive'
+require 'miomiep/messages/system/authorization_sys_ex'
 
 
 module MioMiep
@@ -74,3 +78,4 @@ module MioMiep
     end
   end
 end
+

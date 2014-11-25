@@ -1,14 +1,11 @@
 module MioMiep
   module Message
-    class ProgramChange
+    class ProgramChange < ChannelMessage
       attr_accessor :program_number
 
-      def initialize(program_number)
+      def initialize(status, channel, program_number)
+        super(status, channel)
         @program_number = program_number
-      end
-
-      def to_s
-        "ProgramChange;"
       end
     end
   end

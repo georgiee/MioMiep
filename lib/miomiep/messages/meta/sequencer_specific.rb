@@ -1,13 +1,11 @@
 module MioMiep
   module Message
-    class SequencerSpecific
+    class SequencerSpecific < MetaMessage
       attr_accessor :data
+      
       def initialize(data)
+        super(Message::SEQUENCER_SPECIFIC)
         @data = data
-      end
-
-      def to_s
-        "SequencerSpecific; data: %d" % [data]
       end
     end
   end

@@ -1,6 +1,6 @@
 module MioMiep
   module Message
-    class Controller
+    class Controller < ChannelMessage
       MOD_WHEEL = 0x01
       BREATH_CONTROLLER = 0x02
       FOOT_CONTROLLER = 0x4
@@ -59,13 +59,10 @@ module MioMiep
 
       attr_accessor :controller_type, :value
 
-      def initialize(controller_type, value)
+      def initialize(status, channel, controller_type, value)
+        super(status, channel)
         @controller_type = controller_type
         @value = value
-      end
-
-      def to_s
-        "Controller;"
       end
     end
   end

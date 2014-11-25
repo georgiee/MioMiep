@@ -4,39 +4,95 @@ describe 'decoder' do
   before do
     @decoder = MioMiep::Decoder.new
   end
-
-  it 'decodes a file' do
+  
+  def open_file
+  end
+  
+  it 'decodes a file (legacy)' do
     @file_path = File.join(File.dirname(__FILE__), '..','fixtures', 'test.mid')
     @midi = MioMiep.read(@file_path)
-    puts @midi.tracks[1]
+  end
 
-    puts "----end\n\n"
-    File.open(@file_path) do |file|
-      decoder = MioMiep::Decoder.new
-      decoder.read(file)
+  describe 'test some real files' do
+    it 'reads file a' do
+      @file = open_file()
+      @file_path = File.join(File.dirname(__FILE__), '..','fixtures', 'Mwyoshi.mid')
+      @file = File.open(@file_path)
+      @midi_file = @decoder.read(@file)
+      puts @midi_file.tracks.map(&:describe)
     end
   end
 
+  describe 'midi file building' do
+    before do
+      @file_path = File.join(File.dirname(__FILE__), '..','fixtures', 'test.mid')
+      @file = File.open(@file_path)
+
+      @midi_file = @decoder.read(@file)
+    end
+
+    it 'returns a midi file object' do
+      expect(@midi_file).to be_kind_of(MioMiep::MidiFile)
+    end
+    
+    it 'midi file has all tracks' do
+      expect(@midi_file.tracks.count).to be(2)
+    end
+    
+    it 'assigns aggreagted time deltas' do
+      puts @midi_file.tracks[1].events
+    end
+  end
+
+
+  describe 'running status' do
+    it 'repeats least action' do
+      note_on = MioMiepHelper.create_voice_event_data(MioMiep::Message::NOTE_ON, 15,13 ,17)
+      message = @decoder.read_message(note_on)
+      
+      note_on = MioMiepHelper.encode_data([5, 0], 'cc') #runnign status, repeat last with other parameters
+      message = @decoder.read_message(note_on)
+      expect(message).to be_kind_of(MioMiep::Message::VoiceMessage)
+    end
+    
+    it 'is canccelled by any non voice message' do
+      #a full note message
+      note_on = MioMiepHelper.create_voice_event_data(MioMiep::Message::NOTE_ON, 15,13 ,17)
+      message = @decoder.read_message(note_on)
+      
+      #a meta message, reset running status
+      data = MioMiepHelper.create_meta_event_data(MioMiep::Message::META_EVENT, MioMiep::Message::SEQUENCE_NUMBER, 13, 1)
+      message = @decoder.read_message(data)
+
+      #a running note message
+      runningg_note_on = MioMiepHelper.encode_data([5, 0], 'cc') #runnign status, repeat last with other parameters
+      
+      expect{
+        @decoder.read_message(runningg_note_on)
+      }.to raise_error(/no previous status available/)
+    end
+  end
+  
   describe 'voice messages' do
     it "finds note off" do
       data = MioMiepHelper.create_voice_event_data(MioMiep::Message::NOTE_OFF, 15, 13,17)
       
       message = @decoder.read_message(data)
-      expect(message).to be_kind_of(MioMiep::Message::Voice)
+      expect(message).to be_kind_of(MioMiep::Message::VoiceMessage)
     end
 
     it "finds note on" do
       data = MioMiepHelper.create_voice_event_data(MioMiep::Message::NOTE_ON, 15, 13,17)
       
       message = @decoder.read_message(data)
-      expect(message).to be_kind_of(MioMiep::Message::Voice)
+      expect(message).to be_kind_of(MioMiep::Message::VoiceMessage)
     end
 
     it "finds note aftertouch" do
       data = MioMiepHelper.create_voice_event_data(MioMiep::Message::NOTE_AFTERTOUCH, 15, 13, 1)
       
       message = @decoder.read_message(data)
-      expect(message).to be_kind_of(MioMiep::Message::Voice)
+      expect(message).to be_kind_of(MioMiep::Message::VoiceMessage)
     end
 
     it "finds controller" do

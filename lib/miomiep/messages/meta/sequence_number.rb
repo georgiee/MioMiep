@@ -1,14 +1,10 @@
 module MioMiep
   module Message
-    class PitchBend
+    class SequenceNumber < MetaMessage
       attr_accessor :value
-
       def initialize(value)
+        super(Message::SEQUENCE_NUMBER)
         @value = value
-      end
-
-      def to_s
-        "PitchBend;"
       end
     end
   end

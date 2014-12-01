@@ -15,11 +15,11 @@ describe 'decoder' do
 
   describe 'test some real files' do
     it 'reads file a' do
-      @file = open_file()
-      @file_path = File.join(File.dirname(__FILE__), '..','fixtures', 'Mwyoshi.mid')
+      @file_path = File.join(File.dirname(__FILE__), '..','fixtures', 'Albeniz - Espana (Spain) Op-165 Capricho Catalan.mid')
       @file = File.open(@file_path)
       @midi_file = @decoder.read(@file)
-      puts @midi_file.tracks.map(&:describe)
+      
+      puts @midi_file.summary
     end
   end
 

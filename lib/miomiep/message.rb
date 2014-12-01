@@ -76,6 +76,10 @@ module MioMiep
         when PITCH_BEND; 'PITCH_BEND'
       end
     end
+    
+    def is? (message_type)
+      @status == message_type
+    end
   end
 end
 

@@ -1,10 +1,11 @@
 module MioMiep
   class MidiEvent
-    attr_accessor :message, :time
+    attr_accessor :message, :time, :time_seconds
     
-    def initialize(message, time = 0)
+    def initialize(message, time = 0, time_seconds = 0)
       @message = message
       @time = time
+      @time_seconds = time_seconds
     end
     
     def is? (message_type)
@@ -12,7 +13,8 @@ module MioMiep
     end
 
     def to_s
-      "%-20s| %s" % ["MidiEvent (#{time}p) ", message.to_s]
+      base_description = "MidiEvent (%.02fs, %dp) " % [time_seconds, time]
+      "%-20s| %s" % [base_description, message.to_s]
     end
   end
 end

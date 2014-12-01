@@ -2,11 +2,12 @@ module MioMiep
   class Track
     include Enumerable
     
-    attr_accessor :events, :name
+    attr_accessor :events, :name, :duration
     
     def initialize(events = [])
       @events = events
       @name = 'untitled'
+      @duration = 0
 
       scan_events if @events.count > 0
     end
@@ -16,6 +17,9 @@ module MioMiep
       if message = find_meta_message(Message::TRACK_NAME)
         @name = message.text
       end
+
+      #total duration
+      @duration = events.last.time_seconds
     end
 
     def each

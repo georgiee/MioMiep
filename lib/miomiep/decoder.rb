@@ -1,22 +1,40 @@
 module MioMiep
   class Decoder
     attr_accessor :last_status_byte
-    
+    MICROSECONDS_PER_SECOND = 1_000_000.0
+    DEFAULT_BPM  = 120
+    DEFAULT_TICKS_PER_BEAT = 480
+
     def initialize
       @parser = Parser.new
     end
     
     def read(file)
       @byte_reader = ByteReader.new(file)
-      header = read_header
+      @tempo = 60 * MICROSECONDS_PER_SECOND / DEFAULT_BPM #(microseconds per beat)
+      @ticks_per_beat = DEFAULT_TICKS_PER_BEAT
+
+      @header = read_header
+      @ticks_per_beat = @header.ticks_per_beat
+
       tracks = []
       
-      header.track_count.times{
+      @header.track_count.times{
         track = read_track
-        tracks << track unless track.nil?
+        unless track.nil?
+          tracks << track 
+          #@max_track_time = [track.duration, @max_track_time].max
+        end
+
       }
 
-      @midi_file = MidiFile.new({tracks: tracks, format: 0, timing_division:0 })
+      @midi_file = MidiFile.new({
+        tracks: tracks,
+        filename: File.basename(file.path),
+        format: @header.format,
+        ticks_per_beat: @ticks_per_beat })
+
+      @midi_file
     end
 
     #private
@@ -27,8 +45,7 @@ module MioMiep
       header = OpenStruct.new
       header.format = data.read_int16
       header.track_count = data.read_int16
-      header.time_division = data.read_int16
-
+      header.ticks_per_beat = data.read_int16
       header
     end
     
@@ -43,16 +60,22 @@ module MioMiep
       events = []
 
       total_time = 0;
-      
+
       while (!track_data.eof)
         begin
           delta_time = track_data.read_varint
           total_time += delta_time
 
           message = read_message(track_data)
-          
           unless message.nil?
-            event = MidiEvent.new(message, total_time)
+            if message.kind_of?(Message::SetTempo)
+              @tempo = message.microseconds
+            end
+            
+            seconds_per_beat = (@tempo / MICROSECONDS_PER_SECOND)/@ticks_per_beat
+            time_seconds = total_time * seconds_per_beat
+
+            event = MidiEvent.new(message, total_time, time_seconds)
             events << event
           end
 
@@ -69,14 +92,19 @@ module MioMiep
       @status_byte = data.read_int8
       #puts "status_byte %08b" % @status_byte
       
-      if (@status_byte & 0xF0) != 0xF0
-        find_voice_message(data)
-      elsif @status_byte == 0xFF
-        @last_status_byte = nil
-        find_meta_message(data)
-      else
-        @last_status_byte = nil
-        find_system_message(data)
+      begin
+        if (@status_byte & 0xF0) != 0xF0
+          find_voice_message(data)
+        elsif @status_byte == 0xFF
+          @last_status_byte = nil
+          find_meta_message(data)
+        else
+          @last_status_byte = nil
+          find_system_message(data)
+        end
+      rescue Exception => exception
+        puts "catched some message parsing error: #{exception}"
+        return nil
       end
     end
     

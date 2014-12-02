@@ -3,24 +3,30 @@ require 'spec_helper'
 describe 'decoder' do
   before do
     @decoder = MioMiep::Decoder.new
+    puts "hello @decoder"
+    
+    MioMiep.configure do |config|
+      config.middle_c = 3 #5th octave
+    end
   end
   
-  def open_file
-  end
-  
-  it 'decodes a file (legacy)' do
-    @file_path = File.join(File.dirname(__FILE__), '..','fixtures', 'test.mid')
-    @midi = MioMiep.read(@file_path)
-  end
-
   describe 'test some real files' do
     it 'reads file a' do
-      @file_path = File.join(File.dirname(__FILE__), '..','fixtures', 'Albeniz - Espana (Spain) Op-165 Capricho Catalan.mid')
+      @file_path = File.join(File.dirname(__FILE__), '..','fixtures', 'Mwyoshi.mid')
       @file = File.open(@file_path)
       @midi_file = @decoder.read(@file)
       
-      puts @midi_file.summary
+      puts @midi_file.describe
     end
+  end
+
+  describe 'stable merge event' do
+    @file_path = File.join(File.dirname(__FILE__), '..','fixtures', 'Mwyoshi.mid')
+    @file = File.open(@file_path)
+    @midi_file = @decoder.read(@file)
+
+    tracks = @midi_file.tracks
+    puts tracks
   end
 
   describe 'midi file building' do
@@ -55,7 +61,7 @@ describe 'decoder' do
       expect(message).to be_kind_of(MioMiep::Message::VoiceMessage)
     end
     
-    it 'is canccelled by any non voice message' do
+    pending 'is canccelled by any non voice message' do
       #a full note message
       note_on = MioMiepHelper.create_voice_event_data(MioMiep::Message::NOTE_ON, 15,13 ,17)
       message = @decoder.read_message(note_on)
@@ -174,7 +180,7 @@ describe 'decoder' do
 
     it 'finds a marker' do
       text = 'Lorelei, Lorelei, luda mei'.bytes
-      data = MioMiepHelper.encode_data([MioMiep::Event::META_EVENT, MioMiep::Message::MARKER, text.length] + text, 'c*' )      
+      data = MioMiepHelper.encode_data([MioMiep::Message::META_EVENT, MioMiep::Message::MARKER, text.length] + text, 'c*' )      
 
       message = @decoder.read_message(data)
       expect(message).to be_kind_of(MioMiep::Message::Text)
@@ -182,7 +188,7 @@ describe 'decoder' do
 
     it 'finds a cue point' do
       text = '#xxo -- start engines'.bytes
-      data = MioMiepHelper.encode_data([MioMiep::Event::META_EVENT, MioMiep::Message::CUE_POINT, text.length] + text, 'c*' )      
+      data = MioMiepHelper.encode_data([MioMiep::Message::META_EVENT, MioMiep::Message::CUE_POINT, text.length] + text, 'c*' )      
 
       message = @decoder.read_message(data)
       expect(message).to be_kind_of(MioMiep::Message::Text)
@@ -190,7 +196,7 @@ describe 'decoder' do
 
     it 'finds a program name' do
       text = 'some program name'.bytes
-      data = MioMiepHelper.encode_data([MioMiep::Event::META_EVENT, MioMiep::Message::PROGRAM_NAME, text.length] + text, 'c*' )      
+      data = MioMiepHelper.encode_data([MioMiep::Message::META_EVENT, MioMiep::Message::PROGRAM_NAME, text.length] + text, 'c*' )      
 
       message = @decoder.read_message(data)
       expect(message).to be_kind_of(MioMiep::Message::Text)
@@ -198,7 +204,7 @@ describe 'decoder' do
 
     it 'finds a device name' do
       text = 'some device name'.bytes
-      data = MioMiepHelper.encode_data([MioMiep::Event::META_EVENT, MioMiep::Message::DEVICE_NAME, text.length] + text, 'c*' )      
+      data = MioMiepHelper.encode_data([MioMiep::Message::META_EVENT, MioMiep::Message::DEVICE_NAME, text.length] + text, 'c*' )      
 
       message = @decoder.read_message(data)
       expect(message).to be_kind_of(MioMiep::Message::Text)
@@ -277,7 +283,7 @@ describe 'decoder' do
     it 'handles divided SysEx' do
       #first message with no eof flag
       content = 'some content'.bytes
-      data = MioMiepHelper.encode_data([MioMiep::Event::SYS_EX, content.length] + content, 'c*' )
+      data = MioMiepHelper.encode_data([MioMiep::Message::SYS_EX, content.length] + content, 'c*' )
       
       message = @decoder.read_message(data)
       puts message.incomplete?
@@ -285,13 +291,13 @@ describe 'decoder' do
 
       #continue
       content = 'more content'.bytes
-      data = MioMiepHelper.encode_data([MioMiep::Event::END_OF_SYS_EX, content.length] + content, 'c*' )
+      data = MioMiepHelper.encode_data([MioMiep::Message::END_OF_SYS_EX, content.length] + content, 'c*' )
       message = @decoder.read_message(data)
       expect(message.incomplete?).to be(true)
 
       #complete
-      content = 'end content'.bytes + [MioMiep::Event::END_OF_SYS_EX]
-      data = MioMiepHelper.encode_data([MioMiep::Event::END_OF_SYS_EX, content.length] + content, 'c*' )
+      content = 'end content'.bytes + [MioMiep::Message::END_OF_SYS_EX]
+      data = MioMiepHelper.encode_data([MioMiep::Message::END_OF_SYS_EX, content.length] + content, 'c*' )
       message = @decoder.read_message(data)
       
       expect(message.incomplete?).to be(false)

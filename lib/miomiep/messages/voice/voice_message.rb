@@ -7,10 +7,11 @@ module MioMiep
         super(type, channel)
         @note = note
         @velocity = velocity
+        #@note2 = Note.new(@note, @velocity)
       end
 
       def to_s
-        "%s -- note: %d, velocity: %d" % [event_name, note, velocity]
+        output = "%s -- note: %d (%s), velocity: %d" % [event_name, note, Note.note_to_key(note), velocity]
       end
     end
   end

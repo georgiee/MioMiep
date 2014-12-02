@@ -25,16 +25,17 @@ module MioMiep
       @note = note
       @velocity = velocity
     end
+    
+    def self.octave_shift
+      MioMiep.config.middle_c - 5
+    end
 
     def self.note_to_key(note)
-      octave_shift = -1
       octave = note / 12 + octave_shift;
       name = KEYS[note % 12] + ("%d" % octave;)
     end
 
     def self.key_to_note(name)
-      octave_shift = -1
-
       name = name.to_s
       octave = name.scan(/-?\d{1,2}\z/).first
       octave = octave.to_i
@@ -50,6 +51,7 @@ module MioMiep
     def self.note_to_freq(note) 
       center_freq = 440 #by convention
       center_tone = 69 #A4 by convention
+
       center_freq * 2** ((note - center_tone)/12.0);
     end
 

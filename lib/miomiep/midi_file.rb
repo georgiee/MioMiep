@@ -9,6 +9,15 @@ module MioMiep
       @format = options.fetch(:format, 0)
       @ticks_per_beat = options.fetch(:ticks_per_beat, 480)
     end
+    
+    def to_merged_events
+      events = @tracks.map(&:events).flatten.select(&:is_voice?)
+      #events.each_with_index.sort_by {|event, index| [event[:int], index] }.map(&:first)
+      
+      n = 0
+      events.sort_by {|event| n+= 1; [event, n]}
+      events
+    end
 
     def duration
       max_by{ |track| track.duration}.duration

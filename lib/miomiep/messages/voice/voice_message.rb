@@ -12,6 +12,7 @@ module MioMiep
 
       def to_s
         output = "%s -- note: %d (%s), velocity: %d" % [event_name, note, Note.note_to_key(note), velocity]
+        #output << "-- status %0x" % status
       end
     end
   end

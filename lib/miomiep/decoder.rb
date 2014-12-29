@@ -6,7 +6,6 @@ module MioMiep
     DEFAULT_TICKS_PER_BEAT = 480
 
     def initialize
-      @parser = Parser.new
     end
     
     def read(file)

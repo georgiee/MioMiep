@@ -3,7 +3,6 @@ require 'spec_helper'
 describe 'decoder' do
   before do
     @decoder = MioMiep::Decoder.new
-    puts "hello @decoder"
     
     MioMiep.configure do |config|
       config.middle_c = 3 #5th octave
@@ -16,17 +15,19 @@ describe 'decoder' do
       @file = File.open(@file_path)
       @midi_file = @decoder.read(@file)
       
-      puts @midi_file.describe
+      #puts @midi_file.describe
     end
   end
 
   describe 'stable merge event' do
-    @file_path = File.join(File.dirname(__FILE__), '..','fixtures', 'Mwyoshi.mid')
-    @file = File.open(@file_path)
-    @midi_file = @decoder.read(@file)
+    it 'stable merges all events' do
+      @file_path = File.join(File.dirname(__FILE__), '..','fixtures', 'Mwyoshi.mid')
+      @file = File.open(@file_path)
+      @midi_file = @decoder.read(@file)
 
-    tracks = @midi_file.tracks
-    puts tracks
+      events = @midi_file.to_merged_events
+      #puts events
+    end
   end
 
   describe 'midi file building' do
